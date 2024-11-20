@@ -86,7 +86,7 @@ function App() {
             <input
               type="email"
               placeholder="Email"
-              className=" bg-transparent text-gray-300 placeholder-gray-500 outline-none px-1 z-30"
+              className=" bg-transparent text-gray-300 placeholder-gray-500 outline-none px-1 z-30 w-[calc(100%-96px)]"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
