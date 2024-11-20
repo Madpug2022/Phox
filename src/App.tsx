@@ -91,7 +91,7 @@ function App() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <button className="bg-primary text-white text-xs px-2 py-2 rounded-lg hover:bg-blue-700 transition ml-auto z-30 w-42">
+            <button className="bg-primary text-white text-xs px-2 py-2 rounded-lg hover:bg-blue-700 transition ml-auto z-30 w-24 whitespace-nowrap">
               Join waitlist
             </button>
           </form>
