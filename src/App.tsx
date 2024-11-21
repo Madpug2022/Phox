@@ -2,8 +2,7 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { BsTwitterX } from "react-icons/bs";
-import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const ExpandableMenu = ({ title, text }: { title: string; text: string }) => {
   const [expanded, setExpanded] = useState(false);
