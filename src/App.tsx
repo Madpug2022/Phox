@@ -8,7 +8,7 @@ const ExpandableMenu = ({ title, text }: { title: string; text: string }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="flex flex-col md:w-[448px] bg-light cursor-pointer rounded-xl">
+    <div className="flex flex-col w-[300px] md:w-[448px] bg-light cursor-pointer rounded-xl">
       <div
         className="flex items-center justify-between gap-5  py-2 px-3 "
         onClick={() => setExpanded(!expanded)}
@@ -89,7 +89,7 @@ function App() {
             <div className="flex justify-around w-full gap-1">
               <button
                 onClick={handleLinkedInShare}
-                className="flex items-center p-2 px-4 bg-lind rounded-lg text-sm gap-2"
+                className="flex items-center p-2 px-8 bg-lind rounded-lg text-sm gap-2"
               >
                 <FaLinkedin />
                 <span>Share</span>
@@ -124,7 +124,7 @@ function App() {
           </div>
           <div className="flex flex-col items-center">
             <h1 className="text-[40px] text-center">Get early access</h1>
-            <p className="text-center text-secondary md:w-[448px] text-[15px]">
+            <p className="text-center text-secondary w-[300px] md:w-[448px] text-[15px]">
               Be amongst the first to replicate the intelligence from e-commerce
               into your physical store. Sign up to be notified when we launch!
             </p>
