@@ -51,10 +51,10 @@ function App() {
         "hpC-YHf5lJWUujzhb"
       )
       .then(
-        (result) => {
+        () => {
           toast.success("Correo enviado exitosamente");
         },
-        (error) => {
+        () => {
           toast.error("Error al enviar el correo:");
         }
       );
