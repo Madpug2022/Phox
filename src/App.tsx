@@ -66,20 +66,6 @@ function App() {
     setEmail("");
   };
 
-  const handleTwitterShare = () => {
-    const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent("¡Mira esto!");
-    const twitterShareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-    window.open(twitterShareUrl, "_blank");
-  };
-
-  const handleWhatsAppShare = () => {
-    const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent("¡Mira esto!");
-    const whatsappShareUrl = `https://api.whatsapp.com/send?text=${text}%20${url}`;
-    window.open(whatsappShareUrl, "_blank");
-  };
-
   const handleLinkedInShare = () => {
     const url = encodeURIComponent(window.location.href);
     const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
@@ -102,22 +88,6 @@ function App() {
               else who might be interested
             </p>
             <div className="flex justify-around w-full gap-1">
-              <button
-                onClick={handleTwitterShare}
-                className="flex items-center p-2 px-4 bg-black rounded-lg text-sm gap-2"
-              >
-                <BsTwitterX />
-                <span>Share</span>
-              </button>
-
-              <button
-                onClick={handleWhatsAppShare}
-                className="flex items-center p-2 px-4 bg-wts rounded-lg text-sm gap-2"
-              >
-                <FaWhatsapp />
-                <span>Share</span>
-              </button>
-
               <button
                 onClick={handleLinkedInShare}
                 className="flex items-center p-2 px-4 bg-lind rounded-lg text-sm gap-2"
