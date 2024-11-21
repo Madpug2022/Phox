@@ -29,7 +29,7 @@ const ExpandableMenu = ({ title, text }: { title: string; text: string }) => {
           />
         </svg>
       </div>
-      {expanded && <p className="text-white p-2 text-sm">{text}</p>}
+      {expanded && <p className="text-gray-400 p-2 text-sm">{text}</p>}
     </div>
   );
 };
@@ -82,7 +82,7 @@ function App() {
             <h2 className="text-4xl font-semibold text-center">
               You're on the list!
             </h2>
-            <p className="max-w-[350px] text-center text-sm">
+            <p className="max-w-[350px] text-center text-sm text-gray-400">
               You've sucessfully secured your spot. Feel free to refer someone
               else who might be interested
             </p>
@@ -124,7 +124,7 @@ function App() {
           </div>
           <div className="flex flex-col items-center">
             <h1 className="text-[40px] text-center">Get early access</h1>
-            <p className="text-center text-secondary w-[300px] md:w-[448px] text-[15px]">
+            <p className="text-center text-gray-400 w-[300px] md:w-[448px] text-[15px]">
               Be amongst the first to replicate the intelligence from e-commerce
               into your physical store. Sign up to be notified when we launch!
             </p>
@@ -174,7 +174,7 @@ function App() {
           />
         </div>
       </section>
-      <footer className="text-sm text-secondary flex flex-col items-center justify-center mt-14 gap-4">
+      <footer className="text-sm text-gray-400 flex flex-col items-center justify-center mt-14 gap-4">
         <p>. RETAIL INNOVATION TECHNOLOGIES .</p>
         <p>© 2024 info@phoxretail.com</p>
       </footer>
