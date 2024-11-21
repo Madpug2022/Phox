@@ -4,13 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  height: 100vh;
+}
 body {
   font-family: "Poppins", sans-serif;
-  background-color: rgb(13, 13, 13);
-  background-image: url("/bg.png");
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-  background-position: center; /* Centra la imagen */
   color: #fff;
 }
 
@@ -30,10 +28,4 @@ body {
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: destination-out;
-}
-
-@media (max-width: 670px) {
-  body {
-    background-position: center right; /* Centra en el lado derecho */
-  }
 }
