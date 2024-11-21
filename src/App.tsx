@@ -2,6 +2,8 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BsTwitterX } from "react-icons/bs";
+import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
 const ExpandableMenu = ({ title, text }: { title: string; text: string }) => {
   const [expanded, setExpanded] = useState(false);
@@ -35,6 +37,7 @@ const ExpandableMenu = ({ title, text }: { title: string; text: string }) => {
 
 function App() {
   const [email, setEmail] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -52,6 +55,7 @@ function App() {
       )
       .then(
         () => {
+          setSuccess(true);
           toast.success("Correo enviado exitosamente");
         },
         () => {
@@ -61,8 +65,70 @@ function App() {
 
     setEmail("");
   };
+
+  const handleTwitterShare = () => {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent("¡Mira esto!");
+    const twitterShareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+    window.open(twitterShareUrl, "_blank");
+  };
+
+  const handleWhatsAppShare = () => {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent("¡Mira esto!");
+    const whatsappShareUrl = `https://api.whatsapp.com/send?text=${text}%20${url}`;
+    window.open(whatsappShareUrl, "_blank");
+  };
+
+  const handleLinkedInShare = () => {
+    const url = encodeURIComponent(window.location.href);
+    const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+    window.open(linkedInShareUrl, "_blank");
+  };
+
   return (
-    <main className="flex flex-col pt-[25px] px-[16px] pb-[8px] gap-[30px] h-screen w-full bg-third">
+    <main className="relative flex flex-col pt-[70px] px-[16px] pb-[8px] gap-[35px] h-full w-full bg-third">
+      {success && (
+        <section className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
+          <div className="p-8 px-10 flex flex-col gap-6 items-center bg-third rounded-lg">
+            <div className="w-[48px] h-[48px] flex items-center justify-center bg-primary rounded-lg">
+              <img src="/MiniLogo.png" alt="logo" />
+            </div>
+            <h2 className="text-4xl font-semibold text-center">
+              You're on the list!
+            </h2>
+            <p className="max-w-[350px] text-center text-sm">
+              You've sucessfully secured your spot. Feel free to refer someone
+              else who might be interested
+            </p>
+            <div className="flex justify-around w-full gap-1">
+              <button
+                onClick={handleTwitterShare}
+                className="flex items-center p-2 px-4 bg-black rounded-lg text-sm gap-2"
+              >
+                <BsTwitterX />
+                <span>Share</span>
+              </button>
+
+              <button
+                onClick={handleWhatsAppShare}
+                className="flex items-center p-2 px-4 bg-wts rounded-lg text-sm gap-2"
+              >
+                <FaWhatsapp />
+                <span>Share</span>
+              </button>
+
+              <button
+                onClick={handleLinkedInShare}
+                className="flex items-center p-2 px-4 bg-lind rounded-lg text-sm gap-2"
+              >
+                <FaLinkedin />
+                <span>Share</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -127,19 +193,15 @@ function App() {
         <div className="flex flex-col gap-5">
           <ExpandableMenu
             title="What is PHOX?"
-            text="We are the first partner that integrates store digitalization, artificial intelligence and consulting to bring e-commerce intelligence to physical stores."
+            text="We are the first partner that integrates store digitalization, artificial intelligence and consulting to bring e-commerce intelligence to physical stores, enchancing business results, customer experience and operational excellence."
           />
           <ExpandableMenu
             title="How does it work?"
-            text="We create a digital twin of your store and upload all the available data to it to enable better decisions in a fraction of the time."
+            text="We develop a digital twin of your store and integrate all available data from your company to increase your store's IQ. This enables us to provide the most accurate diagnosis and help you make better business decisions in a fraction of time"
           />
           <ExpandableMenu
-            title="How can i get it?"
-            text="Join the waiting list and follow us on social networks!"
-          />
-          <ExpandableMenu
-            title="Is PHOX the right partner for my brand?"
-            text="Phox is optimal for brands with a certain level of digital maturity."
+            title="How can I get it?"
+            text="Join the waiting list, and our team will reach to you shortly!"
           />
         </div>
       </section>

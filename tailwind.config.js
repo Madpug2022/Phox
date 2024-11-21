@@ -9,6 +9,8 @@ export default {
         third: "#000337",
         fourth: "#00FFE7",
         light: "#181F4B",
+        wts: "#0ECD4C",
+        lind: "#1977F2",
       },
     },
   },
