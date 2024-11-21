@@ -163,7 +163,7 @@ function App() {
         <div className="flex flex-col gap-5">
           <ExpandableMenu
             title="What is PHOX?"
-            text="We are the first partner that integrates store digitalization, artificial intelligence and consulting to bring e-commerce intelligence to physical stores, enchancing business results, customer experience and operational excellence."
+            text="We are the first partner that integrates store digitalization, artificial intelligence and consulting to bring e-commerce intelligence to physical stores, enhancing business results, customer experience and operational excellence."
           />
           <ExpandableMenu
             title="How does it work?"
